@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-caveat), cursive;
+  --color-mist: #f4f7fb;
+  --color-ink: #172033;
+  --color-muted: #5c6780;
+  --color-blue: #3a5bff;
+  --color-blue-deep: #2746e6;
+  --color-blue-soft: #e7edff;
+  --color-sun: #ffc83a;
+  --color-sun-deep: #f0b400;
+  --color-navy: #0c1428;
+  --color-line: #e4eaf5;
+  --shadow-card: 0 14px 40px rgb(23 32 51 / 0.08);
+  --shadow-lift: 0 18px 50px rgb(23 32 51 / 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-mist);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: #ffc83a;
+  color: #172033;
+}
+
+:focus-visible {
+  outline: 2px solid #3a5bff;
+  outline-offset: 3px;
+}
+
+.blob {
+  border-radius: 58% 42% 48% 52% / 46% 58% 42% 54%;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.7s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
